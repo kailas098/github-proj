@@ -4,5 +4,6 @@ class joy
 	{
 		int q = 33;
 		System.out.println(q);
+		System.out.println("hello");
 	}
 }
