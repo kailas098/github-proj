@@ -10,6 +10,8 @@ class joy {
 		System.out.println(palindrome("kailas"));
 
 		System.out.println(isNumber("1oo2"));
+
+		printPattern(4);
 	}
 
 	public static String palindrome(String s) {
@@ -29,6 +31,15 @@ class joy {
 			return true;
 		} catch (Exception e) {
 			return false;
+		}
+	}
+
+	public static void printPattern(int n) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
 		}
 	}
 }
