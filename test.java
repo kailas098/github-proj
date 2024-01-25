@@ -12,6 +12,11 @@ class test {
 		System.out.println(isNumber("1oo2"));
 
 		printPattern(4);
+
+		Node head = new Node();
+		createList(new int[]{1,2,3,4}, head);
+
+		System.out.println(countNum(head));
 	}
 
 	public static String palindrome(String s) {
@@ -42,4 +47,45 @@ class test {
 			System.out.println();
 		}
 	}
+
+	public static int countNum(Node head) {
+		Node temp = head;
+		int c = 0;
+
+		while (temp != null) {
+			c += temp.num;
+			temp = temp.next;
+		}
+
+		return c;
+	}
+
+	public static void createList(int[] arr, Node head) {
+
+		for (int a : arr) {
+			Node node = new Node();
+			node.num = a;
+			node.next = null;
+
+			Node last = getLast(head);
+
+			last.next = node;
+		}
+	}
+
+	public static Node getLast(Node head) {
+
+		Node temp = head;
+
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+
+		return temp;
+	}
+}
+
+class Node {
+	int num;
+	Node next;
 }
